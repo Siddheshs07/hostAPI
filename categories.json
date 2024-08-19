@@ -1,0 +1,182 @@
+[
+  {
+    "name": "organic-food",
+    "description": "food products that are grown and processed without synthetic additives.",
+    "subcategories": [
+      "fresh-fruits",
+      "vegetables",
+      "farm-to-table",
+      "vegan",
+      "plant-based"
+    ]
+  },
+  {
+    "name": "gourmet",
+    "description": "high-quality, specialty food products.",
+    "subcategories": ["delicacies", "fine-dining"]
+  },
+  {
+    "name": "asian-food",
+    "description": "food products originating from various asian cuisines.",
+    "subcategories": ["spices", "noodles", "desserts"]
+  },
+  {
+    "name": "snacks",
+    "description": "products meant for casual eating between meals.",
+    "subcategories": ["healthy-snacks", "gourmet-snacks"]
+  },
+  {
+    "name": "baked-goods",
+    "description": "products made through baking, including various types of bread and pastries.",
+    "subcategories": ["artisan-bread", "pastries"]
+  },
+  {
+    "name": "seafood",
+    "description": "products from marine life, including fish and shellfish.",
+    "subcategories": ["fresh-fish", "shellfish"]
+  },
+  {
+    "name": "dairy-products",
+    "description": "products made from milk and other dairy sources.",
+    "subcategories": ["cheese"]
+  },
+  {
+    "name": "clothing",
+    "description": "various types of apparel for different occasions.",
+    "subcategories": [
+      "streetwear",
+      "casual-wear",
+      "formal-wear",
+      "fashion-accessories"
+    ]
+  },
+  {
+    "name": "electronics",
+    "description": "devices and gadgets for various technological needs.",
+    "subcategories": [
+      "gadgets",
+      "mobile-phones",
+      "tech-accessories",
+      "innovations",
+      "high-tech"
+    ]
+  },
+  {
+    "name": "machines",
+    "description": "various types of machinery for different industrial needs.",
+    "subcategories": ["power-tools", "heavy-equipment", "precision-tools"]
+  },
+  {
+    "name": "shoes",
+    "description": "footwear for various activities and fashion needs.",
+    "subcategories": ["sneakers", "athletic-wear", "formal-wear"]
+  },
+  {
+    "name": "fast-food",
+    "description": "quickly prepared food items typically served in fast-food restaurants.",
+    "subcategories": ["burgers", "fries", "fried-chicken"]
+  },
+  {
+    "name": "street-food",
+    "description": "food sold by vendors in public places, often providing quick, affordable meals.",
+    "subcategories": ["tacos", "hot-dogs", "falafel"]
+  },
+  {
+    "name": "urban-eats",
+    "description": "trendy and contemporary food options popular in urban areas.",
+    "subcategories": [
+      "gourmet-food-trucks",
+      "fusion-cuisine",
+      "ethnic-street-food"
+    ]
+  },
+  {
+    "name": "health-food",
+    "description": "nutritious food options that promote overall well-being.",
+    "subcategories": ["superfoods", "protein-bars", "nutritional-supplements"]
+  },
+  {
+    "name": "spices",
+    "description": "aromatic substances used to flavor and preserve food.",
+    "subcategories": ["herbs", "seasonings", "blends"]
+  },
+  {
+    "name": "noodles",
+    "description": "a type of pasta made from wheat or rice flour, often used in asian cuisine.",
+    "subcategories": ["ramen", "udon", "soba"]
+  },
+  {
+    "name": "desserts",
+    "description": "sweet treats enjoyed at the end of a meal.",
+    "subcategories": ["cakes", "cookies", "ice-cream"]
+  },
+  {
+    "name": "fresh-produce",
+    "description": "raw fruits and vegetables that are fresh and unprocessed.",
+    "subcategories": ["fruits", "fresh-vegetables"]
+  },
+  {
+    "name": "plant-based",
+    "description": "foods derived from plants, excluding animal products.",
+    "subcategories": ["tofu", "plant-based-milk", "vegan-cheese"]
+  },
+  {
+    "name": "artisanal-bread",
+    "description": "bread made with various artisanal techniques for unique flavors and textures.",
+    "subcategories": ["sourdough", "ciabatta", "baguette"]
+  },
+  {
+    "name": "frozen-food",
+    "description": "a category that includes frozen products for convenience and preservation.",
+    "subcategories": ["frozen-fruit-vegetables", "frozen-meat"]
+  },
+  {
+    "name": "meat-poultry",
+    "description": "a variety of meat and poultry products, including different preparations and cuts.",
+    "subcategories": ["dried-meat", "processed-meat"]
+  },
+  {
+    "name": "fashion",
+    "description": "trends and styles in clothing and accessories.",
+    "subcategories": ["casual-wear", "formal-wear", "luxury"]
+  },
+  {
+    "name": "tech-accessories",
+    "description": "various accessories designed to complement and enhance technology devices.",
+    "subcategories": ["phone-cases", "screen-protectors", "charging-cables"]
+  },
+  {
+    "name": "luxury",
+    "description": "high-end products that offer exclusivity and superior quality.",
+    "subcategories": ["designer-clothing", "high-jewelry", "luxury-accessories"]
+  },
+  {
+    "name": "formal-wear",
+    "description": "elegant clothing suitable for formal occasions.",
+    "subcategories": ["suits", "evening-gowns", "tuxedos"]
+  },
+  {
+    "name": "casual-wear",
+    "description": "comfortable clothing suitable for everyday wear.",
+    "subcategories": ["jeans", "t-shirts", "hoodies"]
+  },
+  {
+    "name": "athletic-wear",
+    "description": "clothing designed for physical exercise and sports.",
+    "subcategories": ["leggings", "sports-bras", "running-shoes"]
+  },
+  {
+    "name": "high-tech",
+    "description": "advanced technology products with cutting-edge features.",
+    "subcategories": ["smartphones", "wearable-tech", "home-automation"]
+  },
+  {
+    "name": "gourmet-food-trucks",
+    "description": "food trucks offering high-quality, specialty food items.",
+    "subcategories": [
+      "fusion-cuisine",
+      "gourmet-burgers",
+      "artisanal-sandwiches"
+    ]
+  }
+]
