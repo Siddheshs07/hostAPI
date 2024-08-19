@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 5000;
 const placesRoutes = require("./routes/places");
 const categoriesRoutes = require("./routes/categories");
 const dbConnect = require("./db/connect");
+const cors = require("cors");
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("We are Live Now");
 });
