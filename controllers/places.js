@@ -1,13 +1,21 @@
 const PlacesSchema = require("../models/place");
 
 const getAllPlaces = async (req, res) => {
-  const { category_slugs, name, sort, select } = req.query;
+  const { category_slugs, name, sort, select, _id } = req.query;
 
   const queryObject = {};
+  const paramsArray = Array.isArray(category_slugs)
+    ? category_slugs
+    : category_slugs
+    ? category_slugs.split(",")
+    : [];
 
   if (category_slugs) {
-    queryObject.category_slugs = { $regex: category_slugs, $options: "i" };
+    queryObject.category_slugs = { $in: paramsArray };
     console.log(queryObject.category_slugs);
+  }
+  if (_id) {
+    queryObject._id = _id;
   }
   if (name) {
     queryObject.name = { $regex: name, $options: "i" };
