@@ -1,5 +1,5 @@
 const PlacesSchema = require("../models/place");
-
+const mongoose = require("mongoose");
 const getAllPlaces = async (req, res) => {
   const { category_slugs, name, sort, select, _id, from, to } = req.query;
 
@@ -17,13 +17,27 @@ const getAllPlaces = async (req, res) => {
   if (_id) {
     queryObject._id = _id;
   }
-  if (from) {
-    queryObject._id = queryObject._id || {};
-    queryObject._id = from;
-  }
-  if (to) {
-    queryObject._id = queryObject._id || {};
-    queryObject._id = to;
+  // if (from) {
+  //   queryObject._id = queryObject._id || {};
+  //   queryObject._id = from;
+  // }
+  // if (to) {
+  //   queryObject._id = queryObject._id || {};
+  //   queryObject._id = to;
+  // }
+
+  if (from || to) {
+    const ids = [];
+    if (mongoose.Types.ObjectId.isValid(from)) {
+      ids.push(new mongoose.Types.ObjectId(from));
+    }
+    if (mongoose.Types.ObjectId.isValid(to)) {
+      ids.push(new mongoose.Types.ObjectId(to));
+    }
+
+    if (ids.length > 0) {
+      queryObject._id = { $in: ids };
+    }
   }
   if (name) {
     queryObject.name = { $regex: name, $options: "i" };
@@ -62,13 +76,26 @@ const getAllPlacesTesting = async (req, res) => {
   if (_id) {
     queryObject._id = _id;
   }
-  if (from) {
-    queryObject._id = queryObject._id || {};
-    queryObject._id = from;
-  }
-  if (to) {
-    queryObject._id = queryObject._id || {};
-    queryObject._id = to;
+  // if (from) {
+  //   queryObject._id = queryObject._id || {};
+  //   queryObject._id = from;
+  // }
+  // if (to) {
+  //   queryObject._id = queryObject._id || {};
+  //   queryObject._id = to;
+  // }
+  if (from || to) {
+    const ids = [];
+    if (mongoose.Types.ObjectId.isValid(from)) {
+      ids.push(new mongoose.Types.ObjectId(from));
+    }
+    if (mongoose.Types.ObjectId.isValid(to)) {
+      ids.push(new mongoose.Types.ObjectId(to));
+    }
+
+    if (ids.length > 0) {
+      queryObject._id = { $in: ids };
+    }
   }
   if (name) {
     queryObject.name = { $regex: name, $options: "i" };
