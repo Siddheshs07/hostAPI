@@ -1,7 +1,7 @@
 const PlacesSchema = require("../models/place");
 
 const getAllPlaces = async (req, res) => {
-  const { category_slugs, name, sort, select, _id } = req.query;
+  const { category_slugs, name, sort, select, _id, from, to } = req.query;
 
   const queryObject = {};
   const paramsArray = Array.isArray(category_slugs)
@@ -16,6 +16,14 @@ const getAllPlaces = async (req, res) => {
   }
   if (_id) {
     queryObject._id = _id;
+  }
+  if (from) {
+    queryObject._id = queryObject._id || {};
+    queryObject._id = from;
+  }
+  if (to) {
+    queryObject._id = queryObject._id || {};
+    queryObject._id = to;
   }
   if (name) {
     queryObject.name = { $regex: name, $options: "i" };
@@ -38,7 +46,7 @@ const getAllPlaces = async (req, res) => {
 };
 
 const getAllPlacesTesting = async (req, res) => {
-  const { category_slugs, name, sort, select, _id } = req.query;
+  const { category_slugs, name, sort, select, _id, from, to } = req.query;
 
   const queryObject = {};
   const paramsArray = Array.isArray(category_slugs)
@@ -53,6 +61,14 @@ const getAllPlacesTesting = async (req, res) => {
   }
   if (_id) {
     queryObject._id = _id;
+  }
+  if (from) {
+    queryObject._id = queryObject._id || {};
+    queryObject._id = from;
+  }
+  if (to) {
+    queryObject._id = queryObject._id || {};
+    queryObject._id = to;
   }
   if (name) {
     queryObject.name = { $regex: name, $options: "i" };
