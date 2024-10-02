@@ -18,7 +18,7 @@
   {
     "name": "asian-food",
     "description": "food products originating from various asian cuisines.",
-    "subcategories": ["spices", "noodles", "desserts"]
+    "subcategories": ["spices", "noodles"]
   },
   {
     "name": "snacks",
@@ -74,41 +74,37 @@
   {
     "name": "fast-food",
     "description": "quickly prepared food items typically served in fast-food restaurants.",
-    "subcategories": ["burgers", "fries", "fried-chicken"]
+    "subcategories": ["burgers", "fries"]
   },
   {
     "name": "street-food",
     "description": "food sold by vendors in public places, often providing quick, affordable meals.",
-    "subcategories": ["tacos", "hot-dogs", "falafel"]
+    "subcategories": ["tacos", "hot-dogs"]
   },
   {
     "name": "urban-eats",
     "description": "trendy and contemporary food options popular in urban areas.",
-    "subcategories": [
-      "gourmet-food-trucks",
-      "fusion-cuisine",
-      "ethnic-street-food"
-    ]
+    "subcategories": ["fusion-cuisine", "ethnic-street-food"]
   },
   {
     "name": "health-food",
     "description": "nutritious food options that promote overall well-being.",
-    "subcategories": ["superfoods", "protein-bars", "nutritional-supplements"]
+    "subcategories": ["superfoods", "protein-bars"]
   },
   {
     "name": "spices",
     "description": "aromatic substances used to flavor and preserve food.",
-    "subcategories": ["herbs", "seasonings", "blends"]
+    "subcategories": ["herbs", "seasonings"]
   },
   {
     "name": "noodles",
     "description": "a type of pasta made from wheat or rice flour, often used in asian cuisine.",
-    "subcategories": ["ramen", "udon", "soba"]
+    "subcategories": ["ramen", "udon"]
   },
   {
     "name": "desserts",
     "description": "sweet treats enjoyed at the end of a meal.",
-    "subcategories": ["cakes", "cookies", "ice-cream"]
+    "subcategories": ["cakes", "ice-cream"]
   },
   {
     "name": "fresh-produce",
@@ -118,22 +114,22 @@
   {
     "name": "plant-based",
     "description": "foods derived from plants, excluding animal products.",
-    "subcategories": ["tofu", "plant-based-milk", "vegan-cheese"]
+    "subcategories": ["tofu", "plant-based-milk"]
   },
   {
-    "name": "artisanal-bread",
+    "name": "artisanal-bread ",
     "description": "bread made with various artisanal techniques for unique flavors and textures.",
-    "subcategories": ["sourdough", "ciabatta", "baguette"]
+    "subcategories": ["sourdough", "ciabatta"]
   },
   {
     "name": "frozen-food",
     "description": "a category that includes frozen products for convenience and preservation.",
-    "subcategories": ["frozen-fruit-vegetables", "frozen-meat"]
+    "subcategories": ["frozen-fruit-vegetables"]
   },
   {
     "name": "meat-poultry",
     "description": "a variety of meat and poultry products, including different preparations and cuts.",
-    "subcategories": ["dried-meat", "processed-meat"]
+    "subcategories": ["dried-meat"]
   },
   {
     "name": "fashion",
@@ -143,40 +139,36 @@
   {
     "name": "tech-accessories",
     "description": "various accessories designed to complement and enhance technology devices.",
-    "subcategories": ["phone-cases", "screen-protectors", "charging-cables"]
+    "subcategories": ["phone-cases", "screen-protectors"]
   },
   {
     "name": "luxury",
     "description": "high-end products that offer exclusivity and superior quality.",
-    "subcategories": ["designer-clothing", "high-jewelry", "luxury-accessories"]
+    "subcategories": ["designer-clothing", "high-jewelry"]
   },
   {
     "name": "formal-wear",
     "description": "elegant clothing suitable for formal occasions.",
-    "subcategories": ["suits", "evening-gowns", "tuxedos"]
+    "subcategories": ["suits", "evening-gowns"]
   },
   {
     "name": "casual-wear",
     "description": "comfortable clothing suitable for everyday wear.",
-    "subcategories": ["jeans", "t-shirts", "hoodies"]
+    "subcategories": ["jeans", "t-shirts"]
   },
   {
     "name": "athletic-wear",
     "description": "clothing designed for physical exercise and sports.",
-    "subcategories": ["leggings", "sports-bras", "running-shoes"]
+    "subcategories": ["leggings", "sports-bras"]
   },
   {
     "name": "high-tech",
     "description": "advanced technology products with cutting-edge features.",
-    "subcategories": ["smartphones", "wearable-tech", "home-automation"]
+    "subcategories": ["smartphones", "wearable-tech"]
   },
   {
     "name": "gourmet-food-trucks",
     "description": "food trucks offering high-quality, specialty food items.",
-    "subcategories": [
-      "fusion-cuisine",
-      "gourmet-burgers",
-      "artisanal-sandwiches"
-    ]
+    "subcategories": ["fusion-cuisine", "gourmet-burgers"]
   }
 ]

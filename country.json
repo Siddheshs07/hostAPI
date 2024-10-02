@@ -1,0 +1,67 @@
+[
+  {
+    "name": "asia",
+    "description": "countries located in the asian continent.",
+    "subcategories": ["china", "japan", "india", "south-korea"]
+  },
+  {
+    "name": "europe",
+    "description": "countries located in the european continent.",
+    "subcategories": ["germany", "france", "italy", "spain"]
+  },
+  {
+    "name": "north-america",
+    "description": "countries located in the north american continent.",
+    "subcategories": ["united-states", "canada", "mexico"]
+  },
+  {
+    "name": "south-america",
+    "description": "countries located in the south american continent.",
+    "subcategories": ["brazil", "argentina", "chile"]
+  },
+  {
+    "name": "africa",
+    "description": "countries located in the african continent.",
+    "subcategories": ["egypt", "south-africa", "morocco"]
+  },
+  {
+    "name": "oceania",
+    "description": "countries located in the oceania continent.",
+    "subcategories": ["australia", "new-zealand", "fiji"]
+  },
+  {
+    "name": "middle-east",
+    "description": "countries located in the middle east region.",
+    "subcategories": ["united-arab-emirates", "saudi-arabia", "israel"]
+  },
+  {
+    "name": "caribbean",
+    "description": "countries located in the caribbean region.",
+    "subcategories": ["cuba", "jamaica", "bahamas"]
+  },
+  {
+    "name": "central-america",
+    "description": "countries located in the central american region.",
+    "subcategories": ["costa-rica", "panama", "belize"]
+  },
+  {
+    "name": "eastern-europe",
+    "description": "countries located in the eastern european region.",
+    "subcategories": ["russia", "poland", "czech-republic"]
+  },
+  {
+    "name": "western-europe",
+    "description": "countries located in the western european region.",
+    "subcategories": ["united-kingdom", "france", "germany"]
+  },
+  {
+    "name": "scandinavia",
+    "description": "countries located in the scandinavian region.",
+    "subcategories": ["norway", "sweden", "denmark"]
+  },
+  {
+    "name": "balkans",
+    "description": "countries located in the balkan region.",
+    "subcategories": ["greece", "turkey", "bulgaria"]
+  }
+]
