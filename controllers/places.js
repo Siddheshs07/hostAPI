@@ -86,6 +86,18 @@ const getAllPlacesTesting = async (req, res) => {
     queryObject.category_slugs = { $in: paramsArray };
     console.log(queryObject.category_slugs);
   }
+
+  const paramsArray1 = Array.isArray(countries)
+    ? countries
+    : countries
+    ? countries.split(",")
+    : [];
+
+  if (countries) {
+    queryObject.countries = { $in: paramsArray1 };
+    console.log(queryObject.countries);
+  }
+
   if (id) {
     queryObject.id = id;
   }
