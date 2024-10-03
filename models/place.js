@@ -45,6 +45,10 @@ const PlaceSchema = mongoose.Schema({
     type: [String],
     default: [],
   },
+  country: {
+    type: [String],
+    default: [],
+  },
 });
 
 module.exports = mongoose.model("Place", PlaceSchema);

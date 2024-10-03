@@ -1,7 +1,7 @@
 const PlacesSchema = require("../models/place");
 const mongoose = require("mongoose");
 const getAllPlaces = async (req, res) => {
-  const { category_slugs, name, sort, select, id, from, to, countries } =
+  const { category_slugs, name, sort, select, id, from, to, country } =
     req.query;
 
   const queryObject = {};
@@ -16,15 +16,15 @@ const getAllPlaces = async (req, res) => {
     console.log(queryObject.category_slugs);
   }
 
-  const paramsArray1 = Array.isArray(countries)
-    ? countries
-    : countries
-    ? countries.split(",")
+  const paramsArray1 = Array.isArray(country)
+    ? country
+    : country
+    ? country.split(",")
     : [];
 
-  if (countries) {
-    queryObject.countries = { $in: paramsArray1 };
-    console.log(queryObject.countries);
+  if (country) {
+    queryObject.country = { $in: paramsArray1 };
+    console.log(queryObject.country);
   }
 
   if (id) {
@@ -73,7 +73,8 @@ const getAllPlaces = async (req, res) => {
 };
 
 const getAllPlacesTesting = async (req, res) => {
-  const { category_slugs, name, sort, select, id, from, to } = req.query;
+  const { category_slugs, name, sort, select, id, from, to, country } =
+    req.query;
 
   const queryObject = {};
   const paramsArray = Array.isArray(category_slugs)
@@ -87,15 +88,15 @@ const getAllPlacesTesting = async (req, res) => {
     console.log(queryObject.category_slugs);
   }
 
-  const paramsArray1 = Array.isArray(countries)
-    ? countries
-    : countries
-    ? countries.split(",")
+  const paramsArray1 = Array.isArray(country)
+    ? country
+    : country
+    ? country.split(",")
     : [];
 
-  if (countries) {
-    queryObject.countries = { $in: paramsArray1 };
-    console.log(queryObject.countries);
+  if (country) {
+    queryObject.country = { $in: paramsArray1 };
+    console.log(queryObject.country);
   }
 
   if (id) {
