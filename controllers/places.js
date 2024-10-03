@@ -1,7 +1,8 @@
 const PlacesSchema = require("../models/place");
 const mongoose = require("mongoose");
 const getAllPlaces = async (req, res) => {
-  const { category_slugs, name, sort, select, _id, from, to } = req.query;
+  const { category_slugs, name, sort, select, id, from, to, countries } =
+    req.query;
 
   const queryObject = {};
   const paramsArray = Array.isArray(category_slugs)
@@ -14,16 +15,28 @@ const getAllPlaces = async (req, res) => {
     queryObject.category_slugs = { $in: paramsArray };
     console.log(queryObject.category_slugs);
   }
-  if (_id) {
-    queryObject._id = _id;
+
+  const paramsArray1 = Array.isArray(countries)
+    ? countries
+    : countries
+    ? countries.split(",")
+    : [];
+
+  if (countries) {
+    queryObject.countries = { $in: paramsArray1 };
+    console.log(queryObject.countries);
+  }
+
+  if (id) {
+    queryObject.id = id;
   }
   // if (from) {
-  //   queryObject._id = queryObject._id || {};
-  //   queryObject._id = from;
+  //   queryObject.id = queryObject.id || {};
+  //   queryObject.id = from;
   // }
   // if (to) {
-  //   queryObject._id = queryObject._id || {};
-  //   queryObject._id = to;
+  //   queryObject.id = queryObject.id || {};
+  //   queryObject.id = to;
   // }
 
   if (from || to) {
@@ -36,7 +49,7 @@ const getAllPlaces = async (req, res) => {
     }
 
     if (ids.length > 0) {
-      queryObject._id = { $in: ids };
+      queryObject.id = { $in: ids };
     }
   }
   if (name) {
@@ -60,7 +73,7 @@ const getAllPlaces = async (req, res) => {
 };
 
 const getAllPlacesTesting = async (req, res) => {
-  const { category_slugs, name, sort, select, _id, from, to } = req.query;
+  const { category_slugs, name, sort, select, id, from, to } = req.query;
 
   const queryObject = {};
   const paramsArray = Array.isArray(category_slugs)
@@ -73,16 +86,16 @@ const getAllPlacesTesting = async (req, res) => {
     queryObject.category_slugs = { $in: paramsArray };
     console.log(queryObject.category_slugs);
   }
-  if (_id) {
-    queryObject._id = _id;
+  if (id) {
+    queryObject.id = id;
   }
   // if (from) {
-  //   queryObject._id = queryObject._id || {};
-  //   queryObject._id = from;
+  //   queryObject.id = queryObject.id || {};
+  //   queryObject.id = from;
   // }
   // if (to) {
-  //   queryObject._id = queryObject._id || {};
-  //   queryObject._id = to;
+  //   queryObject.id = queryObject.id || {};
+  //   queryObject.id = to;
   // }
   if (from || to) {
     const ids = [];
@@ -94,7 +107,7 @@ const getAllPlacesTesting = async (req, res) => {
     }
 
     if (ids.length > 0) {
-      queryObject._id = { $in: ids };
+      queryObject.id = { $in: ids };
     }
   }
   if (name) {
