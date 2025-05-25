@@ -20,7 +20,7 @@ const start = async () => {
   try {
     await dbConnect(process.env.EXHIBITION_APP);
     app.listen(PORT, () => {
-      console.log(`Connected To Port ${PORT} Sucessfully`);
+      console.log(`Connected To Port ${PORT} Successfully`);
     });
   } catch (error) {
     console.error("Failed to Start", error);

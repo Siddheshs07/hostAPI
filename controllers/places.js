@@ -150,4 +150,61 @@ const getAllPlacesTesting = async (req, res) => {
   res.status(200).json({ Places, nbHits: Places.length });
 };
 
-module.exports = { getAllPlaces, getAllPlacesTesting };
+const updatePlaces = async (req, res) => {
+  const { ids, name, logoUrl, country } = req.body;
+
+  if (!ids) {
+    return res.status(400).json({ message: "IDs are required." });
+  }
+
+  const idsArray = Array.isArray(ids) ? ids : [ids];
+
+  const updateFields = {};
+  if (name !== undefined) updateFields.name = name;
+  if (logoUrl !== undefined) updateFields.logoUrl = logoUrl;
+  if (country !== undefined) updateFields.country = country;
+
+  if (Object.keys(updateFields).length === 0) {
+    return res
+      .status(400)
+      .json({ message: "At least one field to update is required." });
+  }
+
+  try {
+    const result = await PlacesSchema.updateMany(
+      { id: { $in: idsArray } },
+      { $set: updateFields }
+    );
+
+    res.status(200).json({
+      message: `${result.modifiedCount} place(s) updated successfully.`,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Error updating places", error });
+  }
+};
+
+const deletePlaces = async (req, res) => {
+  const { ids } = req.body;
+
+  if (!ids || !Array.isArray(ids)) {
+    return res.status(400).json({ message: "An array of IDs is required." });
+  }
+
+  try {
+    const result = await PlacesSchema.deleteMany({ id: { $in: ids } });
+
+    res.status(200).json({
+      message: `${result.deletedCount} place(s) deleted successfully.`,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting places", error });
+  }
+};
+
+module.exports = {
+  getAllPlaces,
+  getAllPlacesTesting,
+  updatePlaces,
+  deletePlaces,
+};
