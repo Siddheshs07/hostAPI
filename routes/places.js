@@ -8,7 +8,7 @@ const {
 } = require("../controllers/places");
 placeRouter.route("/").get(getAllPlaces);
 placeRouter.route("/testing").get(getAllPlacesTesting);
-placeRouter.route("/update-names").put(updatePlaces);
+placeRouter.route("/update-places").put(updatePlaces);
 placeRouter.route("/delete").delete(deletePlaces);
 
 module.exports = placeRouter;

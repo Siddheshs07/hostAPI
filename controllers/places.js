@@ -151,33 +151,38 @@ const getAllPlacesTesting = async (req, res) => {
 };
 
 const updatePlaces = async (req, res) => {
-  const { ids, name, logoUrl, country } = req.body;
+  const updates = Array.isArray(req.body) ? req.body : [];
 
-  if (!ids) {
-    return res.status(400).json({ message: "IDs are required." });
-  }
-
-  const idsArray = Array.isArray(ids) ? ids : [ids];
-
-  const updateFields = {};
-  if (name !== undefined) updateFields.name = name;
-  if (logoUrl !== undefined) updateFields.logoUrl = logoUrl;
-  if (country !== undefined) updateFields.country = country;
-
-  if (Object.keys(updateFields).length === 0) {
+  if (updates.length === 0) {
     return res
       .status(400)
-      .json({ message: "At least one field to update is required." });
+      .json({ message: "An array of updates is required." });
   }
 
   try {
-    const result = await PlacesSchema.updateMany(
-      { id: { $in: idsArray } },
-      { $set: updateFields }
+    const results = await Promise.all(
+      updates.map(async (update) => {
+        const { id, ...fieldsToUpdate } = update;
+
+        if (!id || Object.keys(fieldsToUpdate).length === 0) return null;
+
+        return PlacesSchema.updateOne(
+          { id: String(id) },
+          { $set: fieldsToUpdate },
+          { upsert: true }
+        );
+      })
     );
 
+    const modifiedCount = results.filter(
+      (r) => r && r.modifiedCount > 0
+    ).length;
+    const upsertedCount = results.filter(
+      (r) => r && r.upsertedCount > 0
+    ).length;
+
     res.status(200).json({
-      message: `${result.modifiedCount} place(s) updated successfully.`,
+      message: `${modifiedCount} updated, ${upsertedCount} inserted.`,
     });
   } catch (error) {
     res.status(500).json({ message: "Error updating places", error });
@@ -185,14 +190,14 @@ const updatePlaces = async (req, res) => {
 };
 
 const deletePlaces = async (req, res) => {
-  const { ids } = req.body;
+  const { id } = req.body;
 
-  if (!ids || !Array.isArray(ids)) {
+  if (!id || !Array.isArray(id)) {
     return res.status(400).json({ message: "An array of IDs is required." });
   }
 
   try {
-    const result = await PlacesSchema.deleteMany({ id: { $in: ids } });
+    const result = await PlacesSchema.deleteMany({ id: { $in: id } });
 
     res.status(200).json({
       message: `${result.deletedCount} place(s) deleted successfully.`,

@@ -11,7 +11,7 @@ const PlaceSchema = mongoose.Schema({
   },
   slug: {
     type: String,
-    required: true,
+    default: null,
   },
   image: {
     type: String,
@@ -31,7 +31,7 @@ const PlaceSchema = mongoose.Schema({
   },
   description: {
     type: String,
-    required: true,
+    default: null,
   },
   website: {
     type: String,
