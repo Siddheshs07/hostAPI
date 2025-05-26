@@ -49,6 +49,10 @@ const PlaceSchema = mongoose.Schema({
     type: [String],
     default: [],
   },
+  unity_stall: {
+    type: String,
+    default: null,
+  },
 });
 
 module.exports = mongoose.model("Place", PlaceSchema);
